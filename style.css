@@ -3,6 +3,11 @@
   src: url('RoslindaleDisplayCondensed-Regular.ttf');
 }
 
+* {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,37 +18,41 @@ body {
   width: 100vw;
   height: 100vh;
   grid-template-columns: repeat(2, 50%);
-  grid-template-rows: 100px 1fr 20px;
+  grid-template-rows: 100px 1fr 25px;
   grid-gap: 2px;
-  background-color: #1c1c1c;
+  background-color: #d72323;
   overflow: hidden;
 }
 
 .header {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
-  background-color: #f8f8f8;
+  background-color: #f5eded;
   font-family: 'Roslindale', serif;
+  transition: background-color 0.4s;
 }
 
 .content {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  background-color: #f8f8f8;
+  background-color: #f5eded;
   overflow-y: scroll;
 }
 
 .webpage {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  background-color: #f8f8f8;
+  background-color: #f5eded;
 }
 
 footer {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
-  background-color: #f8f8f8;
+  background-color: #f5eded;
+  color: #d72323;
   text-align: center;
+  padding: 4px 0 0 0;
+  transition: background-color 0.4s;
 }
 
 iframe {
@@ -52,30 +61,57 @@ iframe {
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
-  font-family: 'Roslindale', serif;
-  background-color: #f8f8f8;
-  cursor: pointer;
-  padding: 18px;
   width: 100%;
+  height: 50px;
+  font-family: 'Roslindale', serif;
+  font-size: 30px;
+  background-color: #f5eded;
+  color: #d72323;
+  cursor: pointer;
+  padding: 5px 10px 0 10px;
   text-align: left;
   border: none;
   outline: none;
-  border-bottom: 2px solid #1c1c1c;
-  transition: 0.4s;
+  border-bottom: 2px solid #d72323;
+  transition: background-color 0.4s;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+footer:hover,
+.header:hover,
 .accordion:hover {
-  background-color: rgb(134, 134, 134);
+  background-color: #d72323;
+  color: #ffd615;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   font-family: 'Times New Roman', serif;
-  padding: 0 18px;
-  background-color: #f8f8f8;
+  font-size: 18px;
+  padding: 0 10px;
+  background-color: #f5eded;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  box-shadow: inset 0 -2px 0 #1c1c1c;
+  box-shadow: inset 0 -2px 0 #d72323;
+}
+
+.stretch {
+  width: calc(100% - 20px);
+  max-width: 700px;
+  height: calc(100% - 10px);
+  margin: 10px 10px 0 10px;
+}
+
+svg {
+  font-family: 'Roslindale', serif;
+}
+
+text {
+  fill: #d72323;
+  transition: fill 0.4s;
+}
+
+text:hover {
+  fill: #ffd615;
 }
