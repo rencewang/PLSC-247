@@ -148,7 +148,10 @@
           </p>
         </div>
 
-        <button class="accordion" onclick="openAccordion(event)">
+        <button
+          class="accordion"
+          onclick="openAccordion(event); changeChart('findings-chart')"
+        >
           Key Findings
         </button>
         <div class="panel">
@@ -216,7 +219,10 @@
           </p>
         </div>
 
-        <button class="accordion" onclick="openAccordion(event)">
+        <button
+          class="accordion"
+          onclick="openAccordion(event); changeChart('military-chart')"
+        >
           Reporting the Chinese Military
         </button>
         <div class="panel">
@@ -642,7 +648,7 @@
 
         <button
           class="accordion"
-          onclick="openAccordion(event); changeChart('military-chart')"
+          onclick="openAccordion(event); changeChart('conclusion-chart')"
         >
           Conclusion
         </button>
@@ -711,7 +717,7 @@
         <button class="accordion" onclick="openAccordion(event)">
           Bibliography
         </button>
-        <div class="panel">
+        <div class="panel" style="margin-bottom: 50px">
           <p>Lorem ipsum...</p>
         </div>
       </div>
@@ -723,10 +729,26 @@
           width="100%"
           height="100%"
         ></iframe>
-        <div class="chart" id="military-chart">fdsafdsa</div>
+        <div class="chart" id="military-chart">
+          <img
+            class="image-cover"
+            src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/01/05/d59fb15b-4359-48e6-8b0c-2915dad226c0_2482bf47.jpg"
+          />
+        </div>
         <div class="chart" id="time-chart">ewefv</div>
         <div class="chart" id="tibet-chart">tgdve</div>
-        <div class="chart" id="neighbor-chart">wffrtg</div>
+        <div class="chart" id="findings-chart">
+          <img
+            class="image-cover"
+            src="https://static.politico.com/65/3c/c7af071d484994836172d9e9f0e8/181003-china-us-flags-ap-773.jpg"
+          />
+        </div>
+        <div class="chart" id="conclusion-chart">
+          <img
+            class="image-cover"
+            src="https://image.cnbcfm.com/api/v1/image/107005934-16431216332022-01-25t142531z_1974068638_rc2b6s958pfj_rtrmadp_0_china-usa.jpeg?v=1643121675"
+          />
+        </div>
       </div>
 
       <footer>
