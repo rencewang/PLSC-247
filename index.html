@@ -9,8 +9,20 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
       const changeWebpage = (url) => {
+        const embedded = document.getElementById('embedded');
+        embedded.style.display = 'block';
         url = 'https://' + url;
-        document.getElementById('embedded').src = url;
+        embedded.src = url;
+      };
+
+      const changeChart = (id) => {
+        document.getElementById('embedded').style.display = 'none';
+        const chart = document.getElementById(id);
+        const charts = document.getElementsByClassName('chart');
+        for (let i = 0; i < charts.length; i++) {
+          charts[i].style.display = 'none';
+        }
+        chart.style.display = 'block';
       };
 
       const openAccordion = (e) => {
@@ -51,7 +63,10 @@
       </div>
 
       <div class="content">
-        <button class="accordion" onclick="openAccordion(event)">
+        <button
+          class="accordion"
+          onclick="openAccordion(event); changeWebpage('www.pewresearch.org/global/2020/07/30/americans-fault-china-for-its-role-in-the-spread-of-covid-19/pg_20-07-30_u-s-views-china_0-01/')"
+        >
           Introduction
         </button>
         <div class="panel" style="max-height: 1000px">
@@ -359,7 +374,7 @@
         </div>
 
         <button class="accordion" onclick="openAccordion(event)">
-          Seeing China Through Time Magazine Covers
+          Seeing China Through Time Magazine
         </button>
         <div class="panel">
           <p>
@@ -375,19 +390,33 @@
 
           <p>
             In the 2000s, China was not frequently featured on the covers of
-            Time. The June 27, 2005 issue, titled “China’s New Revolution,”
-            shows the official portrait of Mao Zedong dressed in a Louis Vuitton
-            coat. The cover story underlines China’s status as the world
-            factory, its economic rise, and its agenda for stability. It tells
-            the story of how economic performance would lead to political
-            stability, and then it's all fun for everyone involved — the Chinese
-            factory workers, the Chinese government, the US, everyone else.
+            Time. The June 27, 2005 issue, titled “<span
+              onclick="changeWebpage('content.time.com/time/covers/0,16641,20050627,00.html')"
+              >China’s New Revolution</span
+            >,” shows the official portrait of Mao Zedong dressed in a Louis
+            Vuitton coat. The
+            <span
+              onclick="changeWebpage('content.time.com/time/printout/0,8816,1074151,00.html')"
+              >cover story</span
+            >
+            underlines China’s status as the world factory, its economic rise,
+            and its agenda for stability. It tells the story of how economic
+            performance would lead to political stability, and then it's all fun
+            for everyone involved — the Chinese factory workers, the Chinese
+            government, the US, everyone else.
           </p>
 
           <p>
             In October 2011, the cover of a child blowing a Chinese-flag-colored
-            bubble, titled “The China Bubble,” had a similar narrative. The
-            article leads with China's economic miracle that materialized in the
+            bubble, titled “<span
+              onclick="changeWebpage('content.time.com/time/covers/0,16641,20111031,00.html')"
+              >The China Bubble</span
+            >,” had a similar narrative. The
+            <span
+              onclick="changeWebpage('content.time.com/time/subscriber/printout/0,8816,2097400,00.html')"
+              >article</span
+            >
+            leads with China's economic miracle that materialized in the
             luxuries enjoyed by the Chinese nouveau riche, then compares it to
             the poor economic situation that Western countries found themselves
             in. Multinational corporations are excited to expand in China in a
@@ -399,29 +428,42 @@
           <p>
             But it all came to an abrupt stop. In 2012, the two covers that
             involved China were much more negative. On May 14, 2012, the cover
-            was the face of Bo Xilai painted in red — with the title “The
-            People’s Republic of Scandal.” Bo was a contender for the top spot
-            in the Communist Party who lost to Xi Jinping, with rumors
-            circulating that he had intentions to stage a coup. The cover story
+            was the face of Bo Xilai painted in red — with the title “<span
+              onclick="changeWebpage('content.time.com/time/covers/0,16641,20120514,00.html')"
+              >The People’s Republic of Scandal</span
+            >.” Bo was a contender for the top spot in the Communist Party who
+            lost to Xi Jinping, with rumors circulating that he had intentions
+            to stage a coup. The
+            <span
+              onclick="changeWebpage('content.time.com/time/subscriber/printout/0,8816,2113802,00.html')"
+              >cover story</span
+            >
             exposed that piece of political drama, with insights about the
             corruption and crimes within the Party.
           </p>
 
           <p>
             The October 22 cover echoed the previous one: this time Xi Jinping’s
-            portrait is filtered with red. The title read “The Next Leader of
-            the Unfree World.” In the article, the focus was the beaten hopes
-            that China would continue to liberalize. Even though the article
-            could not see into the future about Xi’s authoritarian reign, the
-            sensational cover showed a clear change in attitude.
+            portrait is filtered with red. The title read “<span
+              onclick="changeWebpage('content.time.com/time/covers/0,16641,20121022,00.html')"
+              >The Next Leader of the Unfree World</span
+            >.” In the article, the focus was the beaten hopes that China would
+            continue to liberalize. Even though the article could not see into
+            the future about Xi’s authoritarian reign, the sensational cover
+            showed a clear change in attitude.
           </p>
 
           <p>
-            The June 17 cover in 2013 is a culmination of the change. The
-            article chose to cover the cultural, political, and military
-            ambitions of Xi’s China. The cover’s title, “The World According to
-            China,” depicts an otherness, an inherent conflict of viewpoints —
-            the sense that China carries a foreign agenda.
+            The June 17
+            <span
+              onclick="changeWebpage('content.time.com/time/covers/0,16641,20130617,00.html')"
+              >cover</span
+            >
+            in 2013 is a culmination of the change. The article chose to cover
+            the cultural, political, and military ambitions of Xi’s China. The
+            cover’s title, “The World According to China,” depicts an otherness,
+            an inherent conflict of viewpoints — the sense that China carries a
+            foreign agenda.
           </p>
 
           <p>
@@ -598,15 +640,21 @@
           </p>
         </div>
 
-        <button class="accordion" onclick="openAccordion(event)">
+        <button
+          class="accordion"
+          onclick="openAccordion(event); changeChart('military-chart')"
+        >
           Conclusion
         </button>
         <div class="panel">
           <p>
             All the above changes occurred around 2011 and 2012, which is
-            generally before the public opinion reversal documented by Pew.
-            Consequently, it is more likely that the shift in media coverage led
-            to souring public opinion rather than being pulled by public
+            generally before the public opinion reversal documented by
+            <span
+              onclick="changeWebpage('www.pewresearch.org/global/2020/07/30/americans-fault-china-for-its-role-in-the-spread-of-covid-19/pg_20-07-30_u-s-views-china_0-01/')"
+              >Pew</span
+            >. Consequently, it is more likely that the shift in media coverage
+            led to souring public opinion rather than being pulled by public
             opinion.
           </p>
 
@@ -625,16 +673,25 @@
           <p>
             As to why the media changed its tone and choice of coverage, I have
             several hypotheses. First is a shift in leadership style, from the
-            <a href="" target="_blank">dissonant leadership</a> of President Hu
-            Jintao to the <a href="" target="_blank">iron fist</a> of President
-            Xi Jinping. China did become more forceful in international
-            relations, more unafraid to show off its military, more firm in its
-            pursuit of a security state. Second might be the US media’s
-            disillusion by the broken prospects of further reform and opening.
-            China opened access to the New York Times website in 2001 under
-            President Jiang Zeming, a signal of potential relaxation of rules on
-            the media and civil society. However, it re-<a
-              href=""
+            <a
+              href="https://www.nytimes.com/2011/01/17/world/asia/17china.html"
+              target="_blank"
+              >dissonant leadership</a
+            >
+            of President Hu Jintao to the
+            <a
+              href="https://www.nytimes.com/2013/03/15/world/asia/chinas-new-leader-xi-jinping-takes-full-power.html"
+              target="_blank"
+              >iron fist</a
+            >
+            of President Xi Jinping. China did become more forceful in
+            international relations, more unafraid to show off its military,
+            more firm in its pursuit of a security state. Second might be the US
+            media’s disillusion by the broken prospects of further reform and
+            opening. China opened access to the New York Times website in 2001
+            under President Jiang Zeming, a signal of potential relaxation of
+            rules on the media and civil society. However, it re-<a
+              href="https://www.nytimes.com/2012/10/26/world/asia/china-blocks-web-access-to-new-york-times.html"
               target="_blank"
               >blocked access</a
             >
@@ -657,9 +714,6 @@
         <div class="panel">
           <p>Lorem ipsum...</p>
         </div>
-
-        content here <span onclick="changeWebpage('www.wsj.com')">google</span>
-        read as PDF, add photos, add charts, write biblio
       </div>
 
       <div class="webpage">
@@ -669,6 +723,10 @@
           width="100%"
           height="100%"
         ></iframe>
+        <div class="chart" id="military-chart">fdsafdsa</div>
+        <div class="chart" id="time-chart">ewefv</div>
+        <div class="chart" id="tibet-chart">tgdve</div>
+        <div class="chart" id="neighbor-chart">wffrtg</div>
       </div>
 
       <footer>

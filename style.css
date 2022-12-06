@@ -17,7 +17,7 @@ body {
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: 60% 40%;
   grid-template-rows: 100px 1fr 25px;
   grid-gap: 2px;
   background-color: #d72323;
@@ -57,6 +57,17 @@ footer {
 
 iframe {
   border: none;
+}
+
+span {
+  color: #d72323;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a,
+a:active {
+  color: #d72323;
 }
 
 /* Style the buttons that are used to open and close the accordion panel */
