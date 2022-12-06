@@ -9,6 +9,10 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
       const changeWebpage = (url) => {
+        const charts = document.getElementsByClassName('chart');
+        for (let i = 0; i < charts.length; i++) {
+          charts[i].style.display = 'none';
+        }
         const embedded = document.getElementById('embedded');
         embedded.style.display = 'block';
         url = 'https://' + url;
@@ -379,7 +383,10 @@
           </p>
         </div>
 
-        <button class="accordion" onclick="openAccordion(event)">
+        <button
+          class="accordion"
+          onclick="openAccordion(event); changeChart('time-chart')"
+        >
           Seeing China Through Time Magazine
         </button>
         <div class="panel">
@@ -486,7 +493,10 @@
           </p>
         </div>
 
-        <button class="accordion" onclick="openAccordion(event)">
+        <button
+          class="accordion"
+          onclick="openAccordion(event); changeChart('tibet-chart')"
+        >
           Changing View of Tibetan Protests
         </button>
         <div class="panel">
@@ -599,7 +609,10 @@
           </p>
         </div>
 
-        <button class="accordion" onclick="openAccordion(event)">
+        <button
+          class="accordion"
+          onclick="openAccordion(event); changeChart('neighbors-chart')"
+        >
           Covering China and Its Neighbors
         </button>
         <div class="panel">
@@ -728,19 +741,56 @@
           src="https://www.pewresearch.org/global/2020/07/30/americans-fault-china-for-its-role-in-the-spread-of-covid-19/pg_20-07-30_u-s-views-china_0-01/"
           width="100%"
           height="100%"
+          style="display: none"
         ></iframe>
+        <div class="chart" id="initial-chart" style="display: block !important">
+          <img
+            class="image-cover"
+            src="https://cdn.theatlantic.com/thumbor/J1mso0oFCDEpok9vEvskzMNQUKk=/312x0:2187x1406/1200x900/media/img/mt/2021/06/GettyImages_1233703218/original.jpg"
+          />
+        </div>
         <div class="chart" id="military-chart">
           <img
             class="image-cover"
             src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/01/05/d59fb15b-4359-48e6-8b0c-2915dad226c0_2482bf47.jpg"
           />
         </div>
-        <div class="chart" id="time-chart">ewefv</div>
-        <div class="chart" id="tibet-chart">tgdve</div>
+        <div class="chart" id="time-chart">
+          <h3>Pre-2011 <i>Time</i> Covers</h3>
+          <img
+            class="time-image"
+            src="https://content.time.com/time/magazine/archive/covers/2005/1101050627_400.jpg"
+          />
+          <img
+            class="time-image"
+            src="https://content.time.com/time/magazine/archive/covers/2011/1101111031_400.jpg"
+          />
+          <h3>Post-2011 <i>Time</i> Covers</h3>
+          <img
+            class="time-image"
+            src="https://content.time.com/time/magazine/archive/covers/2012/1101120514_600.jpg"
+          />
+          <img
+            class="time-image"
+            src="https://content.time.com/time/magazine/archive/covers/2012/1101121022_600.jpg"
+          />
+        </div>
+        <div class="chart" id="tibet-chart">
+          <img
+            class="image-cover"
+            src="https://cdn.prod.www.spiegel.de/images/d6512b7d-0001-0004-0000-000001262823_w1200_r1_fpx57.96_fpy49.97.jpg"
+          />
+        </div>
+        <div class="chart" id="neighbors-chart">
+          <img
+            class="image-cover"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/South_China_Sea_claims_map.svg/1200px-South_China_Sea_claims_map.svg.png"
+          />
+        </div>
         <div class="chart" id="findings-chart">
           <img
             class="image-cover"
-            src="https://static.politico.com/65/3c/c7af071d484994836172d9e9f0e8/181003-china-us-flags-ap-773.jpg"
+            src="https://static01.nyt.com/images/2021/03/24/lens/24ambriefing-promo/24ambriefing-media-superJumbo-v2.jpg"
           />
         </div>
         <div class="chart" id="conclusion-chart">
