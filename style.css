@@ -27,7 +27,7 @@ body {
 .header {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
-  background-color: #f5eded;
+  background-color: #ffffff;
   font-family: 'Roslindale', serif;
   transition: background-color 0.4s;
 }
@@ -35,14 +35,14 @@ body {
 .content {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  background-color: #f5eded;
+  background-color: #ffffff;
   overflow-y: scroll;
 }
 
 .webpage {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  background-color: #f5eded;
+  background-color: #ffffff;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -59,7 +59,7 @@ body {
 footer {
   grid-column: 1 / 3;
   grid-row: 3 / 4;
-  background-color: #f5eded;
+  background-color: #ffffff;
   color: #d72323;
   text-align: center;
   padding: 4px 0 0 0;
@@ -109,7 +109,7 @@ a:active {
   height: 50px;
   font-family: 'Roslindale', serif;
   font-size: 30px;
-  background-color: #f5eded;
+  background-color: #ffffff;
   color: #d72323;
   cursor: pointer;
   padding: 5px 10px 0 10px;
@@ -133,7 +133,7 @@ footer:hover,
   font-family: 'Times New Roman', serif;
   font-size: 18px;
   padding: 0 10px;
-  background-color: #f5eded;
+  background-color: #ffffff;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
